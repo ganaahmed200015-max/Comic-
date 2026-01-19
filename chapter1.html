@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>الفصل الأول</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .flipbook {
+      width: 90%;
+      max-width: 800px;
+      margin: 40px auto;
+      perspective: 2000px;
+    }
+    .page {
+      width: 100%;
+      height: 500px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      cursor: pointer;
+    }
+    .page.flipped {
+      transform: rotateY(-180deg);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Augan Comics</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <div class="flipbook">
+    <!-- 24 صفحات -->
+    <div class="page" style="background-image: url('page1.jpg')"></div>
+    <div class="page" style="background-image: url('page2.jpg')"></div>
+    <div class="page" style="background-image: url('page3.jpg')"></div>
+    <div class="page" style="background-image: url('page4.jpg')"></div>
+    <div class="page" style="background-image: url('page5.jpg')"></div>
+    <div class="page" style="background-image: url('page6.jpg')"></div>
+    <div class="page" style="background-image: url('page7.jpg')"></div>
+    <div class="page" style="background-image: url('page8.jpg')"></div>
+    <div class="page" style="background-image: url('page9.jpg')"></div>
+    <div class="page" style="background-image: url('page10.jpg')"></div>
+    <div class="page" style="background-image: url('page11.jpg')"></div>
+    <div class="page" style="background-image: url('page12.jpg')"></div>
+    <div class="page" style="background-image: url('page13.jpg')"></div>
+    <div class="page" style="background-image: url('page14.jpg')"></div>
+    <div class="page" style="background-image: url('page15.jpg')"></div>
+    <div class="page" style="background-image: url('page16.jpg')"></div>
+    <div class="page" style="background-image: url('page17.jpg')"></div>
+    <div class="page" style="background-image: url('page18.jpg')"></div>
+    <div class="page" style="background-image: url('page19.jpg')"></div>
+    <div class="page" style="background-image: url('page20.jpg')"></div>
+    <div class="page" style="background-image: url('page21.jpg')"></div>
+    <div class="page" style="background-image: url('page22.jpg')"></div>
+    <div class="page" style="background-image: url('page23.jpg')"></div>
+    <div class="page" style="background-image: url('page24.jpg')"></div>
+  </div>
+
+  <script>
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => {
+      page.addEventListener('click', () => {
+        page.classList.toggle('flipped');
+      });
+    });
+  </script>
+
+</body>
+</html>
