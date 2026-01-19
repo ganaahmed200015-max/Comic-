@@ -2,28 +2,43 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>الفصل الأول</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    body {
+      background-color: #1a1a1a; /* خلفية داكنة لتبرز صفحات الكوميك */
+      margin: 0;
+    }
     .flipbook {
-      width: 90%;
+      width: 100%;
       max-width: 800px;
-      margin: 40px auto;
-      perspective: 2000px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column; /* عرض الصفحات تحت بعضها لسهولة القراءة */
+      gap: 15px;
     }
     .page {
       width: 100%;
-      height: 500px;
-      background-size: cover;
+      height: 90vh; /* تأخذ معظم طول الشاشة */
+      background-size: contain; /* هذا السطر يمنع قص الصور ويجعلها تظهر كاملة */
       background-position: center;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      transform-style: preserve-3d;
-      transition: transform 1s;
+      background-repeat: no-repeat;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
       cursor: pointer;
     }
-    .page.flipped {
-      transform: rotateY(-180deg);
+    /* تنسيق النافبار */
+    .navbar {
+      background-color: #4a5db5;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -31,25 +46,25 @@
 
   <nav class="navbar">
     <div class="logo">Augan Comics</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
+    <ul class="nav-links" style="list-style:none;">
+      <li><a href="index.html">الرئيسية</a></li>
     </ul>
   </nav>
 
   <div class="flipbook">
-    <!-- 24 صفحات -->
     <div class="page" style="background-image: url('page1.jpg')"></div>
     <div class="page" style="background-image: url('page2.jpg')"></div>
     <div class="page" style="background-image: url('page3.jpg')"></div>
     <div class="page" style="background-image: url('page4.jpg')"></div>
     <div class="page" style="background-image: url('page5.jpg')"></div>
-   </div>
+    </div>
 
   <script>
+    // هذا الكود يجعل الصفحة تكبر قليلاً عند الضغط عليها
     const pages = document.querySelectorAll('.page');
     pages.forEach(page => {
       page.addEventListener('click', () => {
-        page.classList.toggle('flipped');
+        page.style.height = page.style.height === '100vh' ? '90vh' : '100vh';
       });
     });
   </script>
